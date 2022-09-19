@@ -1,4 +1,7 @@
 {
+    "changes-dialog.discard": "Discard changes",
+    "changes-dialog.question": "Do you really want to discard the changes you made?",
+
     "login.login": "Login",
     "login.username": "Username",
     "login.pwd": "Password",

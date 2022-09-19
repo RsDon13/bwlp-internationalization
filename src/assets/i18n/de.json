@@ -1,4 +1,7 @@
 {
+    "changes-dialog.discard": "Änderungen verwerfen",
+    "changes-dialog.question": "Möchten Sie die vorgenommenen Änderungen wirklich verwerfen?",
+    
     "login.login": "Zugangsdaten",
     "login.username": "Benutzername",
     "login.pwd": "Passwort",
