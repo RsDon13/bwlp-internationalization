@@ -13,11 +13,10 @@
   <div class="row white-font">
     <div class="col-12">
       <h4>
-        Neue Veranstaltung anlegen
+        {{ 'createlecture.new' | translate }}
       </h4>
       <p>
-        Bitte geben Sie einen aussagekräftigen Namen für die Veranstaltung ein.
-      </p>
+        {{ 'createlecture.entername' | translate }} </p>
     </div>
   </div>
   <form (ngSubmit)="createLecture()" [formGroup]="createEventForm" class="form-horizontal" method="POST">
@@ -25,29 +24,29 @@
       <div class="col-12">
         <div class="form-group row">
           <label class="control-label col-12 col-md-3 description mt-1"
-                 for="veranstaltungsname">Veranstaltungsname *</label>
+                 for="veranstaltungsname"> {{ 'createlecture.name' | translate }} </label>
           <div class="col-12 col-md-9 mt-1">
             <input type="text" (keydown.enter)="$event.preventDefault()" class="form-control" id="veranstaltungsname" name="veranstaltungsname"
                    formControlName="lectureName" [ngClass]="{ 'is-invalid': submitted && form.lectureName.errors }"
                    (change)="hasChanged()">
             <div *ngIf="submitted && form.lectureName.errors" class="invalid">
-              <span *ngIf="form.lectureName.errors.required"><i class="fa fa-exclamation-triangle"></i> Veranstaltungsname darf nicht leer sein</span>
+              <span *ngIf="form.lectureName.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'createlecture.notice1' | translate }} </span>
             </div>
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-12 col-lg-3 description mt-1" for="beschreibung">Beschreibung *</label>
+          <label class="control-label col-12 col-lg-3 description mt-1" for="beschreibung"> {{ 'createlecture.description' | translate }}</label>
           <div class="col-12 col-lg-9 mt-1">
             <textarea name="beschreibung" id="beschreibung" class="form-control"
                       formControlName="description" [ngClass]="{ 'is-invalid': submitted && form.description.errors }"
                       (change)="hasChanged()"></textarea>
             <div *ngIf="submitted && form.description.errors" class="invalid">
-              <span *ngIf="form.description.errors.required"><i class="fa fa-exclamation-triangle"></i> Beschreibung darf nicht leer sein</span>
+              <span *ngIf="form.description.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'createlecture.descriptionerror' | translate }}</span>
             </div>
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-12 col-md-3 description mt-1" for="startday">Startdatum *</label>
+          <label class="control-label col-12 col-md-3 description mt-1" for="startday"> {{ 'createlecture.startday' | translate }}</label>
           <div class="col-5 col-md-4 col-lg-2 col-xl-2 mt-1">
             <input type="date" name="startday" min="{{currentDate}}" id="startday" class="form-control"
                    (blur)="setStartDate($event.target.value)" value="{{date |date: 'yyyy-MM-dd'}}"
@@ -61,13 +60,13 @@
           <div class="col-12 offset-md-3 offset-lg-0 col-lg-2 col-xl-3 mt-1 invalid"
                *ngIf="submitted && (form.startTime.errors || form.startDay.errors || amountOfDays < 1)">
             <span *ngIf="form.startTime.errors?.required || form.startDay.errors?.required">
-              <i class="fa fa-exclamation-triangle"></i> Startdatum darf nicht leer sein</span>
+              <i class="fa fa-exclamation-triangle"></i> {{ 'createlecture.startdayerror' | translate }} </span>
             <span *ngIf="amountOfDays < 1"><i class="fa fa-exclamation-triangle"></i>
-              Das Startdatum muss vor dem Enddatum liegen.</span>
+              {{ 'createlecture.startdayinfo' | translate }}</span>
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-12 col-md-3 description mt-1" for="endday">Enddatum *</label>
+          <label class="control-label col-12 col-md-3 description mt-1" for="endday"> {{ 'createlecture.endday' | translate }} </label>
           <div class="col-5 col-md-4 col-lg-2 col-xl-2 mt-1">
             <input type="date" name="endday" min="{{currentDate}}" id="endday" class="form-control"
                    (blur)="setEndDate($event.target.value)" value="{{date |date: 'yyyy-MM-dd'}}"
@@ -81,13 +80,13 @@
           <div class="col-12 offset-md-3 offset-lg-0 col-lg-2 col-xl-3 mt-1 invalid"
                *ngIf="submitted && (form.endTime.errors || form.endDay.errors)">
             <span *ngIf="form.endTime.errors?.required || form.endDay.errors?.required">
-              <i class="fa fa-exclamation-triangle"></i> Enddatum darf nicht leer sein</span>
+              <i class="fa fa-exclamation-triangle"></i> {{ 'createlecture.enddayerror' | translate }} </span>
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-12 col-lg-3 description mt-1" for="amount">Dauer der Veranstaltung</label>
+          <label class="control-label col-12 col-lg-3 description mt-1" for="amount"> {{ 'createlecture.amount' | translate }} </label>
           <div class="col-12 col-lg-8 mt-1">
-            <span class="days" id="amount">{{ amountOfDays }} Tag(e)</span>
+            <span class="days" id="amount">{{ amountOfDays }} {{ 'createlecture.days' | translate }} </span>
           </div>
         </div>
       </div>
@@ -97,10 +96,10 @@
       <div class="col-12">
         <hr class="whiteHr">
         <h4>
-          VM verknüpfen
+          {{ 'createlecture.image' | translate }}
         </h4>
         <p [ngClass]="{ 'invalid': submitted && form.imageVersionId.errors }"><i *ngIf="submitted && form.imageVersionId.errors"class="fa fa-exclamation-triangle"></i>
-          Wählen Sie eine VM für diese Veranstaltung aus. *
+          {{ 'createlecture.imageerror' | translate }}
         </p>
       </div>
     </div>
@@ -113,12 +112,12 @@
           </div>
           <div class="col-12 col-md-7 col-lg-5 mt-3 mt-lg-0">
             <select id="searchselect" class="form-control" disabled>
-              <option>Nur verwendbare/linkbare anzeigen</option>
-              <option>Öffentliche VMs</option>
+              <option> {{ 'createlecture.imageerror' | translate }} </option>
+              <option> {{ 'createlecture.publicimage' | translate }} </option>
             </select>
           </div>
           <div class="col-12 col-md-5 col-lg-2 mt-3 mt-lg-0">
-            <strong>Sichtbar:&nbsp;{{amountOfVms}}</strong>
+            <strong> {{ 'createlecture.visible' | translate }} &nbsp;{{amountOfVms}}</strong>
           </div>
         </div>
       </div>
@@ -149,33 +148,33 @@
 
         <!-- Besitzer Column -->
         <ng-container matColumnDef="besitzer">
-          <mat-header-cell *matHeaderCellDef> Besitzer</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> {{ 'createlecture.owner' | translate }} </mat-header-cell>
           <mat-cell class="mat-cell-mini-list" *matCellDef="let element">{{element.ownerId}}</mat-cell>
         </ng-container>
 
         <!-- Geändert Column -->
         <ng-container matColumnDef="geaendert">
-          <mat-header-cell *matHeaderCellDef> Geändert</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> {{ 'createlecture.changed' | translate }} </mat-header-cell>
           <mat-cell class="mat-cell-mini-list"
                     *matCellDef="let element">{{element.updateTime}}</mat-cell>
         </ng-container>
 
         <!-- Ablaufdatum Column -->
         <ng-container matColumnDef="ablaufdatum">
-          <mat-header-cell *matHeaderCellDef> Ablaufdatum</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> {{ 'createlecture.expiration' | translate }} </mat-header-cell>
           <mat-cell class="mat-cell-mini-list"
                     *matCellDef="let element">{{element.expireTime}}</mat-cell>
         </ng-container>
 
         <!-- Größe Column -->
         <ng-container matColumnDef="groesse">
-          <mat-header-cell *matHeaderCellDef> Größe</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> {{ 'createlecture.size' | translate }} </mat-header-cell>
           <mat-cell class="mat-cell-mini-list" *matCellDef="let element">{{element.fileSize}}</mat-cell>
         </ng-container>
 
         <!--Verwendbar Column-->
         <ng-container matColumnDef="verwendbar">
-          <mat-header-cell *matHeaderCellDef> Verwendbar</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> {{ 'createlecture.usable' | translate }} </mat-header-cell>
           <mat-cell class="mat-cell-mini-list" *matCellDef="let element"><input type="checkbox"
                                                                                 [checked]="element.isValid"
                                                                                 disabled></mat-cell>
@@ -190,10 +189,10 @@
       <div class="col-12">
         <hr class="whiteHr">
         <h4>
-          Berechtigungen festlegen
+          {{ 'createlecture.permission' | translate }}
         </h4>
         <p>
-          Legen Sie hier die gewünschten Berechtigungen fest.
+          {{ 'createlecture.permissionnotice' | translate }}
         </p>
       </div>
     </div>
@@ -203,8 +202,8 @@
           <thead>
           <tr>
             <th></th>
-            <th>Benutzer</th>
-            <th>Bearbeiten</th>
+            <th> {{ 'createlecture.permissionuser' | translate }} </th>
+            <th> {{ 'createlecture.permissionedit' | translate }} </th>
             <th>Admin</th>
           </tr>
           </thead>
@@ -230,7 +229,7 @@
           </div>
           <!--for="newUserName" aus der label Klasse rausgenommen, wegen dem Bemerk ein paar zeilen drüber.-->
           <label class="control-label col-12 col-md-3 push" (click)="addUser()">
-            <b><i class="fa fa-plus fontawesomeicons"></i> Benutzer hinzufügen</b>
+            <b><i class="fa fa-plus fontawesomeicons"></i> {{ 'createlecture.adduser' | translate }} </b>
           </label>
         </div>
       </div>
@@ -238,15 +237,15 @@
     <div class="row white-font">
       <div class="col-12 mt-5">
         <h4>
-          Standardberechtigungen
+          {{ 'createlecture.standardpermission' | translate }}
         </h4>
         <p>
-          Legen Sie hier die Berechtigungen für alle anderen (nicht in der Liste angezeigten) Benutzer fest.
+          {{ 'createlecture.standardpermissionnotice' | translate }}
         </p>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="bearbeiten-veranstaltung" formControlName="edit"
                  (change)="hasChanged()">
-          <label class="form-check-label" for="bearbeiten-veranstaltung">Bearbeiten</label>
+          <label class="form-check-label" for="bearbeiten-veranstaltung"> {{ 'createlecture.permissionedit' | translate }} </label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="admin-veranstaltung" formControlName="admin"
@@ -259,36 +258,35 @@
       <div class="col-12">
         <hr class="whiteHr">
         <h4>
-          Zusätzliche Optionen
+          {{ 'createlecture.options' | translate }}
         </h4>
         <p>
-          Bitte wählen Sie aus folgenden Optionen aus:
+          {{ 'createlecture.optionsoptions' | translate }}
         </p>
       </div>
     </div>
     <div class="row white-font">
       <div class="col-12">
         <div class="form-group row">
-          <label class="col-12 col-md-3 col-lg-2"><b>Allgemein</b></label>
+          <label class="col-12 col-md-3 col-lg-2"><b> {{ 'createlecture.general' | translate }} </b></label>
           <div class="col-12 col-md-9">
             <label><input type="checkbox" id="aktuellsteVersion" formControlName="autoUpdate" (change)="hasChanged()">
-              Immer auf aktuellste VM-Version updaten
+              {{ 'createlecture.uptodate' | translate }}
             </label> <br>
             <label><input type="checkbox" id="aktiveveranstaltung" formControlName="isEnabled" (change)="hasChanged()">
-              Veranstaltung ist aktiv
+              {{ 'createlecture.activ' | translate }}
             </label> <br>
             <label><input type="checkbox" id="pruefung" formControlName="isExam" (change)="hasChanged()">
-              Veranstaltung ist eine Prüfung</label>
+              {{ 'createlecture.exam' | translate }} </label>
           </div>
         </div>
         <div class="form-group row mt-5">
-          <label class="col-12 col-md-3 col-lg-2"><b>Beschränkungen</b></label>
+          <label class="col-12 col-md-3 col-lg-2"><b> {{ 'createlecture.restriction' | translate }} </b></label>
           <div class="col-12 col-md-9">
             <input type="checkbox" id="internetzugriff" formControlName="hasInternetAccess" (change)="hasChanged()">
-            Netzwerk-/Internetzugriff
-            zulassen <br>
+            {{ 'createlecture.network' | translate }} <br>
             <input type="checkbox" id="speichermedien" formControlName="hasUsbAccess" (change)="hasChanged()">
-            Speichermedien zulassen <br>
+            {{ 'createlecture.storage' | translate }} <br>
           </div>
         </div>
       </div>
@@ -297,12 +295,12 @@
       <div class="col-12">
         <hr class="whiteHr">
         <h4>
-          Raumauswahl
+          {{ 'createlecture.rooms' | translate }}
         </h4>
         <p>
-          Bitte wählen Sie die Räume für diese Veranstaltung aus.
+          {{ 'createlecture.selectroom' | translate }}
         </p>
-        <p *ngIf="this.selectedRooms.length > 4" class="invalid"><span><i class="fa fa-exclamation-triangle"></i> Es sind zu viele Räume ausgewählt.</span></p>
+        <p *ngIf="this.selectedRooms.length > 4" class="invalid"><span><i class="fa fa-exclamation-triangle"></i> {{ 'createlecture.amountrooms' | translate }}</span></p>
       </div>
       <div class="col-12">
         <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
@@ -330,11 +328,11 @@
       <div class="col-12 mt-3">
         <div class="radio">
           <label><input type="radio" [value]="true" formControlName="limitToLocations" (change)="hasChanged()">
-            Veranstaltung ausschließlich in den ausgewählten Räumen anzeigen</label>
+            {{ 'createlecture.limitlocation' | translate }} </label>
         </div>
         <div class="radio mt-3 mt-sm-0">
           <label><input type="radio" [value]="false" formControlName="limitToLocations" (change)="hasChanged()">
-            Veranstaltung mit höherer Priorität in den ausgewählten Räumen anzeigen</label>
+            {{ 'createlecture.limitlocation2' | translate }} </label>
         </div>
       </div>
     </div>
@@ -344,12 +342,12 @@
           <div class="col-5">
             <a class="button text-box" id="abbrechen" (click)="stashChanges()">
               <i class="fa fa-times-circle"></i>
-              <b> Abbrechen </b>
+              <b> {{ 'createlecture.cancel' | translate }} </b>
             </a>
           </div>
           <div class="offset-1 col-6 text-right">
             <button type="submit" class="button text-box ml-4" id="fertigstellen" [ngClass]="{ 'invalid': (submitted && this.createEventForm.invalid) || this.selectedRooms.length > 4 || amountOfDays < 1}">
-              <i class="fa fa-check-circle"></i> Fertigstellen
+              <i class="fa fa-check-circle"></i> {{ 'createlecture.finish' | translate }}
             </button>
           </div>
         </div>
