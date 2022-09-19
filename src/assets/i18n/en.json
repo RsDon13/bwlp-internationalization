@@ -8,6 +8,17 @@
     "changeowner.cancel": "Cancel",
     "changeowner.setowner": "Set owner",
 
+    "changevm.change": "Change linked VM",
+    "changevm.choose": "Select a VM that you want to link to this event:",
+    "changevm.search": "Search",
+    "changevm.owner": "Owner",
+    "changevm.changed": "Changed",
+    "changevm.expiration": "Expiration",
+    "changevm.size": "Size",
+    "changevm.usable": "Usable",
+    "changevm.cancel": "Cancel",
+    "changevm.set": "Set VM",
+
     "login.login": "Login",
     "login.username": "Username",
     "login.pwd": "Password",

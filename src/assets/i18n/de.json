@@ -8,6 +8,17 @@
     "changeowner.cancel": "Abbrechen",
     "changeowner.setowner": "Besitzer festlegen",
 
+    "changevm.change": "Verknüpfte VM ändern",
+    "changevm.choose": "Wählen Sie eine VM aus, die Sie mit dieser Veranstaltung verknüpfen wollen:",
+    "changevm.search": "Suche",
+    "changevm.owner": "Besitzer",
+    "changevm.changed": "Geändert",
+    "changevm.expiration": "Ablaufdatum",
+    "changevm.size": "Größe",
+    "changevm.usable": "Verwendbar",
+    "changevm.cancel": "Abbrechen",
+    "changevm.set": "VM festlegen",
+
     "login.login": "Zugangsdaten",
     "login.username": "Benutzername",
     "login.pwd": "Passwort",
