@@ -10,14 +10,14 @@
       </div>
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active toggle-menu" data-toggle="tab" href="#uebersicht"><b>Übersicht</b></a>
+          <a class="nav-link active toggle-menu" data-toggle="tab" href="#uebersicht"><b> {{ 'vm.overview' | translate }} </b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link toggle-menu" data-toggle="tab"
-             href="#vmversionen"><b>VM-Versionen</b></a>
+             href="#vmversionen"><b> {{ 'vm.version' | translate }} </b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link toggle-menu" data-toggle="tab" href="#berechtigungen"><b>Berechtigungen</b></a>
+          <a class="nav-link toggle-menu" data-toggle="tab" href="#berechtigungen"><b> {{ 'vm.permission' | translate }}</b></a>
         </li>
       </ul>
     </div>
@@ -32,7 +32,7 @@
               <input type="text" class="form-control vmName" id="name-vm" name="name-vm" formControlName="imageName" (change)="hasChanged()"
                      [ngClass]="{ 'is-invalid': submitted && form.imageName.errors }">
               <div *ngIf="submitted && form.imageName.errors" class="invalid">
-                <span *ngIf="form.imageName.errors.required"><i class="fa fa-exclamation-triangle"></i> VM-Name darf nicht leer sein</span>
+                <span *ngIf="form.imageName.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'vm.notepmty' | translate }} </span>
               </div>
             </div>
           </div>
@@ -41,14 +41,14 @@
           </ng-template>
           <div class="form-group row">
           <label class="control-label col-12 col-md-3 description"
-                 for="beschreibung-virtuellemaschine"><b>Beschreibung</b></label>
+                 for="beschreibung-virtuellemaschine"><b> {{ 'vm.description' | translate }} </b></label>
           <div class="col-12 col-md-9">
             <textarea id="beschreibung-virtuellemaschine"
                       class="form-control" formControlName="description" (change)="hasChanged()"
                       [ngClass]="{ 'is-invalid': submitted && form.description.errors }" *ngIf="edit; else beschreibung">
             </textarea>
             <div *ngIf="submitted && form.description.errors" class="invalid">
-              <span *ngIf="form.description.errors.required"><i class="fa fa-exclamation-triangle"></i> Beschreibung darf nicht leer sein</span>
+              <span *ngIf="form.description.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'vm.descriptionnotempty' | translate }} </span>
             </div>
           </div>
         </div>
@@ -56,36 +56,34 @@
               <p>{{this.virtuellemaschine.description}}</p>
           </ng-template>
           <div class="form-group row">
-            <label class="control-label col-12 col-sm-5 col-md-3 description" for="besitzer-virtuellemaschine"><b>Besitzer</b></label>
+            <label class="control-label col-12 col-sm-5 col-md-3 description" for="besitzer-virtuellemaschine"><b> {{ 'vm.owner' | translate }} </b></label>
             <div class="col-10 col-sm-4 col-md-4">
               <span id="besitzer-virtuellemaschine">{{virtuellemaschine.ownerId}}</span>
             </div>
             <div class="col-2 col-sm-3 col-md-5" *ngIf="this.admin">
-              <a (click)="changeOwner()" class="edit cursorPointer"><i class="fa fa-pencil-square-o"></i><b> Ändern</b></a>
+              <a (click)="changeOwner()" class="edit cursorPointer"><i class="fa fa-pencil-square-o"></i><b> {{ 'vm.change' | translate }} </b></a>
             </div>
           </div>
           <div class="form-group row">
-            <label class="control-label col-5 col-md-3 description" for="erstellt-virtuellemaschine"><b>Erstellt
-              am</b></label>
+            <label class="control-label col-5 col-md-3 description" for="erstellt-virtuellemaschine"><b> {{ 'vm.date' | translate }} </b></label>
             <div class="col-7 col-md-9">
               <span id="erstellt-virtuellemaschine">{{virtuellemaschine.createTime}}</span>
             </div>
           </div>
           <div class="form-group row">
-            <label class="control-label col-5 col-md-3 description" for="geaendertam-virtuellemaschine"><b>Geändert
-              am</b></label>
+            <label class="control-label col-5 col-md-3 description" for="geaendertam-virtuellemaschine"><b> {{ 'vm.changed' | translate }} </b></label>
             <div class="col-7 col-md-3">
               <span id="geaendertam-virtuellemaschine">{{virtuellemaschine.updateTime}}</span>
             </div>
             <label class="control-label col-5 col-md-1 description"
-                   for="geaendertdurch-virtuellemaschine"><b>durch</b></label>
+                   for="geaendertdurch-virtuellemaschine"><b> {{ 'vm.by' | translate }} </b></label>
             <div class="col-7 col-md-5">
               <span id="geaendertdurch-virtuellemaschine">{{virtuellemaschine.updaterId}}</span>
             </div>
           </div>
           <div class="form-group row">
             <label class="control-label col-12 col-sm-5 col-md-3 description"
-                   for="betriebsystem-virtuellemaschine"><b>Betriebssystem</b></label>
+                   for="betriebsystem-virtuellemaschine"><b> {{ 'vm.os' | translate }} </b></label>
             <div class="col-12 col-sm-7 col-md-6" *ngIf="edit; else os">
               <select formControlName="osId" id="betriebsystem-virtuellemaschine" class="form-control text-box" (change)="hasChanged()">
                 <option *ngFor="let os of osList; let i = index" [value]="i+1">{{os}}</option>
@@ -99,17 +97,17 @@
           </div>
           <div class="form-group row">
             <label class="control-label col-5 col-md-3 description"
-                   for="freigabemodus-virtuellemaschine"><b>Freigabemodus</b></label>
+                   for="freigabemodus-virtuellemaschine"><b> {{ 'vm.mode' | translate }} </b></label>
             <div class="col-4 col-md-4">
               <span id="freigabemodus-virtuellemaschine">{{shareModes[virtuellemaschine.shareMode]}}</span>
             </div>
             <label class="col-4 offset-5 offset-md-0 col-md-3">
-              <input type="checkbox" name="vorlage" disabled [checked]="virtuellemaschine.isTemplate"><span class="grey-font"> Vorlage</span>
+              <input type="checkbox" name="vorlage" disabled [checked]="virtuellemaschine.isTemplate"><span class="grey-font"> {{ 'vm.template' | translate }} </span>
             </label>
           </div>
           <div class="form-group row">
             <label class="control-label col-5 col-md-3 description"
-                   for="versionid-virtuellemaschine"><b>Versions-ID</b></label>
+                   for="versionid-virtuellemaschine"><b> {{ 'vm.versionid' | translate }} </b></label>
             <div class="col-7 col-md-9">
               <span id="versionid-virtuellemaschine">{{virtuellemaschine.latestVersionId}}</span>
             </div>
@@ -122,7 +120,7 @@
           </div>
           <div class="form-group row">
             <label class="control-label col-5 col-md-3 description"
-                   for="virtualisierer-virtuellemaschine"><b>Virtualisierer</b></label>
+                   for="virtualisierer-virtuellemaschine"><b> {{ 'vm.virtualizer' | translate }} </b></label>
             <div class="col-7 col-md-9">
               <span id="virtualisierer-virtuellemaschine">{{virtuellemaschine.virtId}}</span>
             </div>
@@ -137,12 +135,12 @@
                 <thead>
                   <tr>
                     <th *ngIf="edit"></th>
-                    <th>Erstellungszeitpunkt</th>
-                    <th>Ablaufszeitpunkt</th>
-                    <th>Ersteller</th>
-                    <th>Verwendbar</th>
-                    <th>Größe</th>
-                    <th>Interne ID</th>
+                    <th> {{ 'vm.creation' | translate }} </th>
+                    <th> {{ 'vm.expiration' | translate }} </th>
+                    <th> {{ 'vm.creator' | translate }} </th>
+                    <th> {{ 'vm.usable' | translate }} </th>
+                    <th> {{ 'vm.size' | translate }} </th>
+                    <th> {{ 'vm.internalid' | translate }} </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -167,10 +165,10 @@
                 <thead>
                 <tr>
                   <th *ngIf="edit"></th>
-                  <th>Benutzer</th>
-                  <th>Verlinken</th>
+                  <th> {{ 'vm.user' | translate }} </th>
+                  <th> {{ 'vm.link' | translate }} </th>
                   <th>Download</th>
-                  <th>Bearbeiten</th>
+                  <th> {{ 'vm.edit' | translate }} </th>
                   <th>Admin</th>
                 </tr>
                 </thead>
@@ -197,22 +195,22 @@
                   </mat-autocomplete>
                 </div>
                 <label class="control-label col-12 col-md-3 push" for="newUserName" (click)="addUser()">
-                  <b><i class="fa fa-plus fontawesomeicons"></i> Benutzer hinzufügen</b>
+                  <b><i class="fa fa-plus fontawesomeicons"></i> {{ 'vm.adduser' | translate }} </b>
                 </label>
               </div>
             </div>
           </div>
           <div class="form-group row mt-5">
             <div class="col-12">
-              <h5>Andere Nutzer</h5>
+              <h5> {{ 'vm.otheruser' | translate }} </h5>
               <p>
-                Hier können Sie die Rechte für nicht in der Liste angegebene Nutzer festlegen
+                {{ 'vm.list' | translate }}
               </p>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="verlinken-vm" formControlName="link" *ngIf="admin; else defaultlink"
                        [checked]="virtuellemaschine.defaultPermissions.link" (change)="hasChanged();">
                 <ng-template #defaultlink><input [checked]="virtuellemaschine.defaultPermissions.link" disabled type="checkbox">&nbsp;</ng-template>
-                <label class="form-check-label" for="verlinken-vm">Verlinken</label>
+                <label class="form-check-label" for="verlinken-vm"> {{ 'vm.link' | translate }} </label>
               </div>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="download-vm" formControlName="download"
@@ -224,7 +222,7 @@
                 <input class="form-check-input" type="checkbox" id="bearbeiten-vm" formControlName="edit"
                        [checked]="virtuellemaschine.defaultPermissions.edit" (change)="hasChanged();" *ngIf="admin; else defaultedit">
                 <ng-template #defaultedit><input [checked]="virtuellemaschine.defaultPermissions.edit" disabled type="checkbox">&nbsp;</ng-template>
-                <label class="form-check-label" for="bearbeiten-vm">Bearbeiten</label>
+                <label class="form-check-label" for="bearbeiten-vm"> {{ 'vm.edit' | translate }} </label>
               </div>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="admin-vm" formControlName="admin"
@@ -238,12 +236,12 @@
           <div class="form-group row mt-5">
             <div class="col-12 col-sm-12 col-md-8">
               <button disabled class="butdis text-box" type="button" *ngIf="download"><i class="fa fa-download"></i> Downloaden</button>
-              <button disabled class="butdis text-box" type="button" *ngIf="edit"><i class="fa fa-upload"></i> Neue Version hochladen</button>
+              <button disabled class="butdis text-box" type="button" *ngIf="edit"><i class="fa fa-upload"></i> {{ 'vm.upload' | translate }} </button>
             </div>
             <div class="col-12 col-sm-12 col-md-4 text-right mt-3 mt-md-0">
               <button type="submit" class="text-box" [disabled]="!change" *ngIf="edit"
                       [ngClass]="{ 'butdis': !change, 'button': change, 'invalid': submitted && this.editVMForm.invalid}">
-                <i class="fa fa-check-circle"></i> Speichern</button>
+                <i class="fa fa-check-circle"></i> {{ 'vm.save' | translate }} </button>
               <!--<a class="button text-box disabled" href=""></a>-->
             </div>
           </div>
