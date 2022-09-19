@@ -1,0 +1,15 @@
+{
+    "login.login": "Login",
+    "login.username": "Username",
+    "login.pwd": "Password",
+    "login.loginfailed": "invalid data",
+    "login.namenotempty": "Username cannot be empty",
+    "login.pwdnotempty": "Password cannot be empty",
+    "login.server": "Connection to Satelliteserver is not possible",
+    "login.auth": "Authentification",
+    "login.DFN": "Authentification via DFN-AAI",
+    "login.test": "Test-access",
+    "login.sat": "Direct connection to Satelliteserver",
+    "login.register": "Register"
+
+}

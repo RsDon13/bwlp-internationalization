@@ -5,6 +5,7 @@ import {LoginDialogComponent} from '../login-dialog/login-dialog.component';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../login.service';
 import {Router} from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(public dialog: MatDialog,
               private formBuilder: FormBuilder,
               private loginservice: LoginService,
-              private router: Router) { }
+              private router: Router,
+              private translate: TranslateService) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
