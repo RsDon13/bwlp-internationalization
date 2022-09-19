@@ -20,13 +20,20 @@ import {MatAutocompleteModule, MatDialogModule, MatFormFieldModule, MatIconModul
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatRadioModule} from '@angular/material/radio';
 import { VeranstaltungenDialogComponent } from './veranstaltungen-dialog/veranstaltungen-dialog.component';
 import { VirtuelleMaschinenDialogComponent } from './virtuelle-maschinen-dialog/virtuelle-maschinen-dialog.component';
 import { ChangeOwnerComponent } from './change-owner/change-owner.component';
 import { AenderungenVerwerfenDialogComponent } from './aenderungen-verwerfen-dialog/aenderungen-verwerfen-dialog.component';
 import { ChangeVmComponent } from './change-vm/change-vm.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+   return new TranslateHttpLoader(http);
+}
 
 const myRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -82,7 +89,14 @@ const myRoutes: Routes = [
       MatAutocompleteModule,
       MatTreeModule,
       MatIconModule,
-      MatRadioModule
+      MatRadioModule,
+      TranslateModule.forRoot({
+         loader: {
+            provide: TranslateLoader,
+            useFactory: httpTranslateLoaderFactory,
+            deps: [HttpClient]
+         }
+      })
    ],
    providers: [],
    bootstrap: [
