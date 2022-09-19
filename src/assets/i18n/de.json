@@ -212,7 +212,21 @@
     "lecture.ownfilter": "Eigenen Filter hinzufügen",
     "lecture.addfilter": "Filter hinzufügen",
     "lecture.save": "Speichern",
-    "lecture.through": "durch"
+    "lecture.through": "durch",
+
+    "lectures.overview": "Übersicht Veranstaltungen",
+    "lectures.overviewdescription": "Hier können Sie Veranstaltungen anlegen, bearbeiten und l&ouml;schen.",
+    "lectures.search": "Suchen",
+    "lectures.showall": "Alle anzeigen",
+    "lectures.visible": "Sichtbar:",
+    "lectures.newlecture": "Neue Veranstaltung",
+    "lectures.delete": "Veranstaltung löschen",
+    "lectures.name": "Name",
+    "lectures.owner": "Besitzer",
+    "lectures.start": "Geändert",
+    "lectures.expiration": "Ablaufdatum",
+    "lectures.enable": "Aktiviert",
+    "lectures.valid": "Veranstaltung gültig"
 
 
 }

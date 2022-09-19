@@ -212,7 +212,21 @@
     "lecture.ownfilter": "Add your own filter",
     "lecture.addfilter": "Add filter",
     "lecture.save": "Save",
-    "lecture.through": "by"
+    "lecture.through": "by",
+
+    "lectures.overview": "Lectures overview",
+    "lectures.overviewdescription": "Here you can upload, download, edit and delete lectures.",
+    "lectures.search": "Search",
+    "lectures.showall": "Show all",
+    "lectures.visible": "Visible:",
+    "lectures.newlecture": "Create lecture",
+    "lectures.delete": "Delete lecture",
+    "lectures.name": "Name",
+    "lectures.owner": "Owner",
+    "lectures.start": "Start",
+    "lectures.expiration": "Expiration",
+    "lectures.enable": "Enabled",
+    "lectures.valid": "Lecture valid"
 
 
 
