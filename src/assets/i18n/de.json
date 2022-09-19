@@ -109,6 +109,31 @@
     "createlecture.limitlocation2": "Veranstaltung mit höherer Priorität in den ausgewählten Räumen anzeigen",
     "createlecture.cancel": "Abbrechen",
     "createlecture.finish": "Fertigstellen",
-    "createlecture.days": "Tag(e)"
+    "createlecture.days": "Tag(e)",
+
+    "createvm.create": "Neue VM anlegen",
+    "createvm.chosevm": "Bitte wählen Sie eine virtuelle Maschine zum Hochladen aus.",
+    "createvm.vm": "Virtuelle Maschine",
+    "createvm.vmx": ".vmx-Datei *",
+    "createvm.vmdk": ".vmdk-Datei *",
+    "createvm.notempty": "VM-Name darf nicht leer sein",
+    "createvm.notice": "Hinweis",
+    "createvm.metadata": "Metadaten",
+    "createvm.insertdescription": "Fügen Sie eine Beschreibung hinzu.",
+    "createvm.os": "Betriebssystem *",
+    "createvm.description": "Beschreibung *",
+    "createvm.descriptionnotempty": "Beschreibung darf nicht leer sein",
+    "createvm.addpermission": "Berechtigungen festlegen",
+    "createvm.setpermission": "Legen Sie hier die gewünschten Berechtigungen fest.",
+    "createvm.user": "Benutzer",
+    "createvm.link": "Verlinken",
+    "createvm.edit": "Bearbeiten",
+    "createvm.adduser": "Benutzer hinzufügen",
+    "createvm.standardpermissions": "Standardberechtigungen",
+    "createvm.permissionlist": "Hier können Sie die Rechte für nicht in der Liste angegebene Nutzer festlegen",
+    "createvm.cancel": "Abbrechen",
+    "createvm.finish": "Fertigstellen",
+    "createvm.notice2": "Haben Sie noch keine eigene virtuelle Maschine erstellt, können Sie sich in der Übersicht eine virtuelle Maschine als Vorlage herunterladen, diese an Ihre Bedürfnisse anpassen und anschließend über diesen Assistenzen hochladen.",
+    "createvm.notice3": "Wenn Sie die VM einer bestehenden Veranstaltung aktualisieren möchten, öffnen Sie die Detailansicht der bestehenden VM und wählen Sie 'Neue VM-Version hochladen'. Dadurch bleiben bestehende Berechtigungen, sowie Verknüpfungen zu Veranstaltungen erhalten."
 
 }

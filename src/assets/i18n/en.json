@@ -109,7 +109,32 @@
     "createlecture.limitlocation2": "Show lecture with higher priority in the selected rooms",
     "createlecture.cancel": "Cancel",
     "createlecture.finish": "Finish",
-    "createlecture.days": "Day(s)"
+    "createlecture.days": "Day(s)",
+
+    "createvm.create": "Create new VM",
+    "createvm.chosevm": "Please select a virtual machine to upload.",
+    "createvm.vm": "Virtual machine",
+    "createvm.vmx": ".vmx-File *",
+    "createvm.vmdk": ".vmdk-File *",
+    "createvm.notempty": "VM name must not be empty",
+    "createvm.notice": "Notice",
+    "createvm.metadata": "Metadata",
+    "createvm.insertdescription": "Add a description.",
+    "createvm.os": "Operating system *",
+    "createvm.description": "Description *",
+    "createvm.descriptionnotempty": "Description must not be empty",
+    "createvm.addpermission": "Set permissions",
+    "createvm.setpermission": "Set the desired permissions here.",
+    "createvm.user": "User",
+    "createvm.link": "Link",
+    "createvm.edit": "Edit",
+    "createvm.adduser": "Add User",
+    "createvm.standardpermissions": "Standard permissions",
+    "createvm.permissionlist": "Here you can set the rights for users not specified in the list",
+    "createvm.cancel": "Cancel",
+    "createvm.finish": "Finish",
+    "createvm.notice2": "If you have not yet created your own virtual machine, you can download a virtual machine as a template in the overview, adapt it to your needs and then upload it via this wizard.",
+    "createvm.notice3": "If you want to update the VM of an existing event, open the detail view of the existing VM and select 'Upload new VM version'. This will preserve existing permissions, as well as links to events."
 
 
 }
