@@ -134,7 +134,24 @@
     "createvm.cancel": "Cancel",
     "createvm.finish": "Finish",
     "createvm.notice2": "If you have not yet created your own virtual machine, you can download a virtual machine as a template in the overview, adapt it to your needs and then upload it via this wizard.",
-    "createvm.notice3": "If you want to update the VM of an existing event, open the detail view of the existing VM and select 'Upload new VM version'. This will preserve existing permissions, as well as links to events."
+    "createvm.notice3": "If you want to update the VM of an existing event, open the detail view of the existing VM and select 'Upload new VM version'. This will preserve existing permissions, as well as links to events.",
+
+    "vms.overview": "Virtual machines overview",
+    "vms.overviewdescription": "Here you can upload, download, edit and delete virtual machines.",
+    "vms.search": "Search",
+    "vms.showall": "Show all",
+    "vms.visible": "Visible:",
+    "vms.newvm": "Create VM",
+    "vms.delete": "Delete VM",
+    "vms.name": "Name",
+    "vms.owner": "Owner",
+    "vms.changed": "Changed",
+    "vms.expiration": "Expiration",
+    "vms.size": "Size",
+    "vms.usable": "Usable",
+    "vms.template": "Template",
+    "vms.totalsize": "Total size"
+
 
 
 }

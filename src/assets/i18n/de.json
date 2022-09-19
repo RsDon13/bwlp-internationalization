@@ -134,6 +134,23 @@
     "createvm.cancel": "Abbrechen",
     "createvm.finish": "Fertigstellen",
     "createvm.notice2": "Haben Sie noch keine eigene virtuelle Maschine erstellt, können Sie sich in der Übersicht eine virtuelle Maschine als Vorlage herunterladen, diese an Ihre Bedürfnisse anpassen und anschließend über diesen Assistenzen hochladen.",
-    "createvm.notice3": "Wenn Sie die VM einer bestehenden Veranstaltung aktualisieren möchten, öffnen Sie die Detailansicht der bestehenden VM und wählen Sie 'Neue VM-Version hochladen'. Dadurch bleiben bestehende Berechtigungen, sowie Verknüpfungen zu Veranstaltungen erhalten."
+    "createvm.notice3": "Wenn Sie die VM einer bestehenden Veranstaltung aktualisieren möchten, öffnen Sie die Detailansicht der bestehenden VM und wählen Sie 'Neue VM-Version hochladen'. Dadurch bleiben bestehende Berechtigungen, sowie Verknüpfungen zu Veranstaltungen erhalten.",
+
+    "vms.overview": "Übersicht virtuelle Maschinen",
+    "vms.overviewdescription": "Hier können Sie virtuelle Maschinen hochladen, herunterladen, bearbeiten und l&ouml;schen.",
+    "vms.search": "Suchen",
+    "vms.showall": "Alle anzeigen",
+    "vms.visible": "Sichtbar:",
+    "vms.newvm": "Neue VM",
+    "vms.delete": "VM löschen",
+    "vms.name": "Name",
+    "vms.owner": "Besitzer",
+    "vms.changed": "Geändert",
+    "vms.expiration": "Ablaufdatum",
+    "vms.size": "Größe",
+    "vms.usable": "Verwendbar",
+    "vms.template": "Vorlage",
+    "vms.totalsize": "Gesamtgröße"
+
 
 }

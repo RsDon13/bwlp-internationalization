@@ -10,27 +10,27 @@
       </div>
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active toggle-menu" data-toggle="tab" href="#allgemeine-veranstaltung"><b>Allgemein</b></a>
+          <a class="nav-link active toggle-menu" data-toggle="tab" href="#allgemeine-veranstaltung"><b> {{ 'lecture.general' | translate }} </b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link toggle-menu" data-toggle="tab"
-             href="#beschraenkung-veranstaltung"><b>Beschränkungen</b></a>
+             href="#beschraenkung-veranstaltung"><b> {{ 'lecture.resttriction' | translate }} </b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link toggle-menu" data-toggle="tab" href="#firewall-veranstaltung"><b>Firewall</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link toggle-menu" data-toggle="tab" href="#raumauswahl-veranstaltung"><b>Raumauswahl</b></a>
+          <a class="nav-link toggle-menu" data-toggle="tab" href="#raumauswahl-veranstaltung"><b> {{ 'lecture.room' | translate }} </b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link toggle-menu" data-toggle="tab" href="#vm-start-veranstaltung"><b>VM-Start</b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link toggle-menu" data-toggle="tab"
-             href="#berechtigungen-veranstaltung"><b>Berechtigungen</b></a>
+             href="#berechtigungen-veranstaltung"><b> {{ 'lecture.permission' | translate }} </b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link toggle-menu" data-toggle="tab" href="#netzlaufwerke-veranstaltung"><b>Netzlaufwerke</b></a>
+          <a class="nav-link toggle-menu" data-toggle="tab" href="#netzlaufwerke-veranstaltung"><b> {{ 'lecture.network' | translate }} </b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link toggle-menu" data-toggle="tab" href="#ldap-filter-veranstaltung"><b>LDAP-Filte</b>r</a>
@@ -49,7 +49,7 @@
                      formControlName="lectureName"
                      type="text" (change)="hasChanged()" [ngClass]="{ 'is-invalid': submitted && form.lectureName.errors }">
               <div *ngIf="submitted && form.lectureName.errors" class="invalid">
-                <span *ngIf="form.lectureName.errors.required"><i class="fa fa-exclamation-triangle"></i> Veranstaltungsname darf nicht leer sein</span>
+                <span *ngIf="form.lectureName.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.name' | translate }} </span>
               </div>
             </div>
             <ng-template #name>
@@ -57,23 +57,23 @@
             </ng-template>
             <div class="form-group row">
               <label class="control-label col-12 col-sm-5 col-md-3 col-lg-3 col-xl-3 description"
-                     for="besitzer-veranstaltung"><b>Besitzer</b></label>
+                     for="besitzer-veranstaltung"><b> {{ 'lecture.owner' | translate }} </b></label>
               <div class="col-10 col-sm-4 col-md-5 col-lg-4  col-xl-3">
                 <span id="besitzer-veranstaltung">{{lecture.ownerId}}</span>
               </div>
               <div class="col-2 col-sm-3 col-md-4 col-lg-5 col-xl-6" *ngIf="admin">
-                <a (click)="changeOwner()" class="edit cursorPointer"><i class="fa fa-pencil-square-o"></i><b> Ändern</b></a>
+                <a (click)="changeOwner()" class="edit cursorPointer"><i class="fa fa-pencil-square-o"></i><b>  {{ 'lecture.edit' | translate }} </b></a>
               </div>
             </div>
             <div class="form-group row">
               <label class="control-label col-12 col-md-3 description"
-                     for="beschreibung-veranstaltung"><b>Beschreibung</b></label>
+                     for="beschreibung-veranstaltung"><b> {{ 'lecture.description' | translate }} </b></label>
               <div class="col-12 col-md-9" *ngIf="edit; else beschreibung">
               <textarea class="form-control" id="beschreibung-veranstaltung" formControlName="description"
                         name="beschreibung" (change)="hasChanged()"
                         [ngClass]="{ 'is-invalid': submitted && form.description.errors }"></textarea>
                 <div *ngIf="submitted && form.description.errors" class="invalid">
-                  <span *ngIf="form.description.errors.required"><i class="fa fa-exclamation-triangle"></i> Beschreibung darf nicht leer sein</span>
+                  <span *ngIf="form.description.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.descriptionnotice' | translate }} </span>
                 </div>
               </div>
               <ng-template #beschreibung>
@@ -83,40 +83,36 @@
               </ng-template>
             </div>
             <div class="form-group row">
-              <label class="control-label col-5 col-md-3 description" for="erstellt-am-veranstaltung"><b>Erstellt
-                am</b></label>
+              <label class="control-label col-5 col-md-3 description" for="erstellt-am-veranstaltung"><b> {{ 'lecture.date' | translate }} </b></label>
               <div class="col-7 col-md-9">
                 <span id="erstellt-am-veranstaltung">{{lecture.createTime}}</span>
               </div>
             </div>
             <div class="form-group row">
               <label class="control-label col-5 col-md-3 col-lg-3 col-xl-3 description"
-                     for="geaendert-am-veranstaltung"><b>Geändert
-                am</b></label>
+                     for="geaendert-am-veranstaltung"><b>{{ 'lecture.changed' | translate }} </b></label>
               <div class="col-7 col-md-3 col-lg-3 col-xl-2">
                 <span id="geaendert-am-veranstaltung">{{lecture.updateTime}}</span>
               </div>
               <label class="control-label col-5 col-md-2 col-lg-1 col-xl-1 description"
-                     for="geaendert-durch-veranstaltung"><b>durch</b></label>
+                     for="geaendert-durch-veranstaltung"><b> {{ 'lecture.through' | translate }} </b></label>
               <div class="col-7 col-md-4 col-lg-5 col-xl-6">
                 <span id="geaendert-durch-veranstaltung">{{lecture.updaterId}}</span>
               </div>
             </div>
             <div class="form-group row" *ngIf="edit; else verknuepft">
               <label class="control-label col-12 col-md-3 col-lg-3 col-xl-3 description"
-                     for="verknuepfte-vm-veranstaltung"><b>Verknüpfte
-                VM</b></label>
+                     for="verknuepfte-vm-veranstaltung"><b> {{ 'lecture.linked' | translate }} </b></label>
               <div class="col-10 col-md-5 col-sm-9 col-lg-4 col-xl-3">
                 <span id="verknuepfte-vm-veranstaltung" routerLink="/vms/{{lecture.imageBaseId}}" class="cursorPointer edit">{{lecture.imageVersionId}}</span>
               </div>
               <div class="col-2 col-sm-3 col-md-4 col-lg-5 col-xl-6" *ngIf="edit">
-                <a (click)="changeVm()" class="edit cursorPointer"><i class="fa fa-pencil-square-o"></i><b> Ändern</b></a>
+                <a (click)="changeVm()" class="edit cursorPointer"><i class="fa fa-pencil-square-o"></i><b> {{ 'lecture.edit' | translate }} </b></a>
               </div>
             </div>
             <ng-template #verknuepft>
               <div class="form-group row">
-                <label class="control-label col-5 col-md-3 col-lg-3 col-xl-3 description"><b>Verknüpfte
-                  VM</b></label>
+                <label class="control-label col-5 col-md-3 col-lg-3 col-xl-3 description"><b> {{ 'lecture.linked' | translate }} </b></label>
                 <div class="col-7 col-md-9 col-sm-9 col-lg-9 col-xl-9">
                   <span>{{lecture.imageVersionId}}</span>
                 </div>
@@ -130,7 +126,7 @@
             </div>
             <div class="form-group row">
               <label class="control-label col-12 col-md-3 col-lg-3 col-xl-3 description"
-                     for="startdatum-veranstaltung"><b>Startdatum</b></label>
+                     for="startdatum-veranstaltung"><b> {{ 'lecture.startdate' | translate }} </b></label>
               <div class="col-7 col-sm-5 col-md-5 col-lg-3 col-xl-2" *ngIf="edit; else startday">
                 <input id="startdatum-veranstaltung" class="form-control" name="startday" type="date" formControlName="startDay"
                        (change)="hasChanged()" (blur)="setStartDate($event.target.value)"
@@ -153,14 +149,14 @@
               <div class="col-12 offset-md-3 offset-lg-0 col-lg-2 col-xl-3 mt-1 invalid"
                    *ngIf="submitted && (form.startTime.errors || form.startDay.errors || amountOfDays < 1)">
                 <span *ngIf="form.startTime.errors?.required || form.startDay.errors?.required">
-                  <i class="fa fa-exclamation-triangle"></i> Startdatum darf nicht leer sein</span>
+                  <i class="fa fa-exclamation-triangle"></i> {{ 'lecture.startdatenotempty' | translate }} </span>
                 <span *ngIf="amountOfDays < 1"><i class="fa fa-exclamation-triangle"></i>
-              Das Startdatum muss vor dem Enddatum liegen.</span>
+                  {{ 'lecture.startdatenotice' | translate }} </span>
               </div>
             </div>
             <div class="form-group row">
               <label class="control-label col-12 col-md-3 col-lg-3 col-xl-3 description"
-                     for="enddatum-veranstaltung"><b>Enddatum</b></label>
+                     for="enddatum-veranstaltung"><b> {{ 'lecture.enddate' | translate }} </b></label>
               <div class="col-7 col-sm-5 col-md-5 col-lg-3 col-xl-2" *ngIf="edit; else endday">
                 <input id="enddatum-veranstaltung" class="form-control" name="endday" type="date" formControlName="endDay"
                        (change)="hasChanged()" (blur)="setEndDate($event.target.value)"
@@ -185,10 +181,10 @@
                   <input [checked]="lecture.isEnabled" id="aktiv-veranstaltung" *ngIf="edit, else enabled"
                          name="veranstaltung-aktiv" type="checkbox" formControlName="isEnabled" (change)="hasChanged()">
                   <ng-template #enabled><input type="checkbox" [checked]="lecture.isEnabled" disabled></ng-template>
-                  <b>&nbsp;Veranstaltung aktiv</b></label>
+                  <b>&nbsp; {{ 'lecture.active' | translate }} </b></label>
               </div>
               <div class="col-12 offset-md-3 invalid" *ngIf="submitted && (form.endTime.errors || form.endDay.errors)">
-                <span *ngIf="form.endTime.errors?.required || form.endDay.errors.required"><i class="fa fa-exclamation-triangle"></i> Enddatum darf nicht leer sein</span>
+                <span *ngIf="form.endTime.errors?.required || form.endDay.errors.required"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.enddatenotice' | translate }} </span>
               </div>
             </div>
             <div class="form-group row">
@@ -199,36 +195,35 @@
                        name="aktuellste-version" type="checkbox" (change)="hasChanged()" formControlName="autoUpdate"
                 *ngIf="edit; else autoupdate">
                 <ng-template #autoupdate><input type="checkbox" [checked]="lecture.autoUpdate" disabled></ng-template>
-                <b>&nbsp;Immer aktuellste Version verwenden</b></label>
+                <b>&nbsp; {{ 'lecture.update' | translate }} </b></label>
             </div>
           </div>
           <div class="container tab-pane fade" id="beschraenkung-veranstaltung">
             <div class="row">
             <span class="mt-3 col-12 description">
-              Legen Sie hier fest, ob die Veranstaltung den Zugriff auf Speichermedien (CD, USB, ...)
-              erlauben soll.
+              {{ 'lecture.notice1' | translate }}
             </span>
               <br>
               <label class="col-12 mt-3" for="speichermedium-veranstaltung">
                 <input id="speichermedium-veranstaltung" type="checkbox" *ngIf="edit; else hasusb"
                        [checked]="lecture.hasUsbAccess" (change)="hasChanged()" formControlName="hasUsbAccess">
                 <ng-template #hasusb><input  [checked]="lecture.hasUsbAccess" type="checkbox" disabled></ng-template>
-                Externe Speichermedien zulassen
+                {{ 'lecture.notice2' | translate }}
               </label>
             </div>
             <div class="row">
             <span class="mt-3 col-12 description">
-              Markieren Sie diese Veranstaltung als E-Prüfung.
+              {{ 'lecture.notice3' | translate }}
             </span>
               <br>
               <span class="col-12">
-              Die Prüfung wird nur dann startbar sein, wenn Leerpool.nrw in den Prüfungsmodus versetzt wird. Kontaktieren Sie dazu Ihren lokalen Leerpool.nrw-Administrator.
+                {{ 'lecture.notice4' | translate }}
             </span>
               <label class="col-12 mt-3" for="epruefung-veranstaltung">
                 <input id="epruefung-veranstaltung" name="pruefungsmodus" type="checkbox" formControlName="isExam"
                        [checked]="lecture.isExam" (change)="hasChanged()" *ngIf="edit; else isexam">
                 <ng-template #isexam><input [checked]="lecture.isExam" type="checkbox" disabled></ng-template>
-                Prüfungsmodus
+                {{ 'lecture.exammode' | translate }}
               </label>
             </div>
 
@@ -236,38 +231,35 @@
           <div class="container tab-pane fade" id="firewall-veranstaltung">
             <div class="form-group row">
               <h5 class="mt-3 col-12 description">
-                Legen Sie hier fest, ob die Veranstaltung Zugriff zum Internet haben soll. In der Liste können Sie
-                bestimmte Adressen und Services ein- oder ausschalten.
+                {{ 'lecture.notice5' | translate }}
               </h5>
               <br>
               <label class="col-12 mt-3" for="internetzugriff">
                 <input [checked]="lecture.hasInternetAccess" id="internetzugriff" *ngIf="edit; else hasinternet"
                        name="internetzugriff" type="checkbox" (change)="hasChanged()" formControlName="hasInternetAccess">
                 <ng-template #hasinternet><input type="checkbox" disabled [checked]="lecture.hasInternetAccess"></ng-template>
-                Netzwerk-/Internetzugriff zulassen
+                {{ 'lecture.networkpermission' | translate }}
               </label>
             </div>
             <div class="form-group row mt-5">
               <div class="col-12">
-                <h5>Netzwerkregeln</h5>
-                <p class="invalid"><i class="fa fa-exclamation-triangle"></i> Überprüfung noch nicht möglich</p>
+                <h5> {{ 'lecture.networkrule' | translate }} </h5>
+                <p class="invalid"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.networknotice' | translate }} </p>
               </div>
               <div class="col-12">
                 <p>
-                  Wenn Sie den Internetzugriff deaktiviert haben, können Sie hier Ausnahmen definieren (Whitelist).
-                  Bitte
-                  definieren Sie Ihre Regeln im Format &lt;host&gt; &lt;port&gt; &lt;in|out&gt;. <br>
-                  Sie können Port 0 angeben, was sämtlichen TCP und UDP Ports eines Hosts entspricht.
+                  {{ 'lecture.notice6' | translate }} &lt;host&gt; &lt;port&gt; &lt;in|out&gt;. <br>
+                  {{ 'lecture.notice7' | translate }}
                 </p>
               </div>
               <div class="col-12 col-lg-9">
                 <p>
-                  Wenn Sie Internetzugriff aktivieren, hat diese Liste den gegenteiligen Effekt (Blacklist).
+                  {{ 'lecture.blacklist' | translate }}
                 </p>
               </div>
               <div class="col-12 col-lg-3  text-right">
                 <a class="button text-box black-font">
-                  <i class="fa fa-share"></i><b> Regeln überprüfen</b></a>
+                  <i class="fa fa-share"></i><b> {{ 'lecture.rules' | translate }} </b></a>
               </div>
               <div class="col-12 mt-3">
               <textarea class="form-control" id="firewallregeln-veranstaltung"
@@ -300,7 +292,7 @@
                   </mat-tree-node>
                 </mat-tree>
                 <div *ngIf="this.lecture.locationIds.length > 4" class="invalid">
-                  <span *ngIf="this.lecture.locationIds.length > 4"><i class="fa fa-exclamation-triangle"></i> Es sind zu viele Räume ausgewählt.</span>
+                  <span *ngIf="this.lecture.locationIds.length > 4"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.location' | translate }} </span>
                 </div>
               </div>
               <div class="col-12 mt-3">
@@ -309,19 +301,19 @@
                     <input type="radio" [value]="true" [checked]="lecture.limitToLocations" (change)="hasChanged()"
                            formControlName="limitToLocations" *ngIf="edit; else limittrue">
                     <ng-template #limittrue><input type="radio" [value]="true" [checked]="lecture.limitToLocations" disabled></ng-template>
-                    Veranstaltung ausschließlich in den ausgewählten Räumen anzeigen</label>
+                    {{ 'lecture.location2' | translate }} </label>
                 </div>
                 <div class="radio mt-3 mt-sm-0">
                   <label><input type="radio" [value]="false" [checked]="!lecture.limitToLocations"
                                 (change)="hasChanged()" formControlName="limitToLocations" *ngIf="edit; else limitfalse">
                     <ng-template #limitfalse><input type="radio" [value]="false" [checked]="!lecture.limitToLocations" disabled></ng-template>
-                    Veranstaltung mit höherer Priorität in den ausgewählten Räumen anzeigen</label>
+                    {{ 'lecture.location3' | translate }} </label>
                 </div>
               </div>
             </div>
           </div>
           <div class="container tab-pane fade mt-3" id="vm-start-veranstaltung">
-            <p class="invalid"><i class="fa fa-exclamation-triangle"></i> Funktionalität noch nicht gegeben</p>
+            <p class="invalid"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.function' | translate }} </p>
             <div class="row form-group">
               <label for="audio" class="col-12 col-md-4 col-lg-3 control-label description"><b>Audio</b></label>
               <div class="col-12 col-md-8 col-lg-9">
@@ -331,14 +323,14 @@
               </div>
             </div>
             <div class="form-group row mt-5">
-              <p class="col-12"> Ein hier eingetragenes Skript wird nach dem Start der VM automatisch ausgeführt.</p>
-              <label for="erweiterung" class="col-12 col-md-4 col-lg-3 control-label description"><b>Dateinamenserweiterung</b></label>
+              <p class="col-12"> {{ 'lecture.notice8' | translate }} </p>
+              <label for="erweiterung" class="col-12 col-md-4 col-lg-3 control-label description"><b> {{ 'lecture.extension' | translate }} </b></label>
               <div class="col-12 col-md-8 col-lg-9">
                 <select id="erweiterung" class="form-control text-box" disabled>{{lecture.runscript}}</select>
               </div>
             </div>
             <div class="form-group row">
-              <label for="sichtbarkeit" class="col-12 col-md-4 col-lg-3 control-label description">Sichtbarkeit</label>
+              <label for="sichtbarkeit" class="col-12 col-md-4 col-lg-3 control-label description"> {{ 'lecture.visible' | translate }} </label>
               <div class="col-12 col-md-8 col-lg-9">
                 <select id="sichtbarkeit" class="form-control text-box" disabled>
                   <option></option>
@@ -359,8 +351,8 @@
                   <thead>
                   <tr>
                     <th *ngIf="admin"></th>
-                    <th>Benutzer</th>
-                    <th>Bearbeiten</th>
+                    <th> {{ 'lecture.user' | translate }} </th>
+                    <th> {{ 'lecture.edit2' | translate }}  </th>
                     <th>Admin</th>
                   </tr>
                   </thead>
@@ -387,23 +379,23 @@
                     </mat-autocomplete>
                   </div>
                   <label class="control-label col-12 col-md-3 push" for="newUserName" (click)="addUser()">
-                    <b><i class="fa fa-plus fontawesomeicons"></i> Benutzer hinzufügen</b>
+                    <b><i class="fa fa-plus fontawesomeicons"></i> {{ 'lecture.adduser' | translate }} </b>
                   </label>
                 </div>
               </div>
             </div>
             <div class="form-group row mt-5">
               <div class="col-12">
-                <h5>Andere Nutzer</h5>
+                <h5> {{ 'lecture.otheruser' | translate }} </h5>
                 <p>
-                  Hier können Sie die Rechte für nicht in der Liste angegebene Nutzer festlegen
+                  {{ 'lecture.otheruserinfo' | translate }}
                 </p>
                 <div class="form-check form-check-inline">
                   <input [checked]="lecture.defaultPermissions.edit" class="form-check-input"
                          type="checkbox" id="bearbeiten-veranstaltung" (change)="hasChanged()" formControlName="edit"
                          *ngIf="admin; else defaultedit">
                   <ng-template #defaultedit><input [checked]="lecture.defaultPermissions.edit" disabled type="checkbox">&nbsp;</ng-template>
-                  <label class="form-check-label" for="bearbeiten-veranstaltung">Bearbeiten</label>
+                  <label class="form-check-label" for="bearbeiten-veranstaltung"> {{ 'lecture.edit2' | translate }}</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox"
@@ -418,11 +410,9 @@
           <div class="container tab-pane fade" id="netzlaufwerke-veranstaltung">
             <div class="form-group row mt-3">
               <div class="col-12">
-                <p class="invalid"><i class="fa fa-exclamation-triangle"></i> Funktionalität noch nicht gegeben</p>
+                <p class="invalid"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.function' | translate }} </p>
                 <p>
-                  Hier können Sie Netzlaufwerke angeben, die automatisch beim Start der Veranstaltung eingebunden werden
-                  sollen.
-                  Der Platzhalter %loginuser% wird im Pfad durch den Loginnamen des Nutzers ersetzt.
+                  {{ 'lecture.notice9' | translate }}
                 </p>
               </div>
             </div>
@@ -433,11 +423,11 @@
                   <tr>
                     <th></th>
                     <th>Name</th>
-                    <th>Pfad</th>
-                    <th>Laufwerk</th>
-                    <th>Authentifizierung</th>
+                    <th> {{ 'lecture.path' | translate }} </th>
+                    <th> {{ 'lecture.drive' | translate }} </th>
+                    <th> {{ 'lecture.auth' | translate }} </th>
                     <th>Username</th>
-                    <th>Passwort</th>
+                    <th> {{ 'lecture.pwd' | translate }} </th>
                   </tr>
                   </thead>
                   <tbody>
@@ -445,7 +435,7 @@
                 </table>
                 <div class="form-group row mt-5">
                   <div class="col-12">
-                    <b class="description">Eigenes Netzlaufwerk definieren</b>
+                    <b class="description"> {{ 'lecture.owndrive' | translate }} </b>
                   </div>
                 </div>
                 <div class="form-group row mt-2">
@@ -457,24 +447,24 @@
                 </div>
                 <div class="form-group row mt-2">
                   <label class="control-label col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2"
-                         for="newNLWPfad"><b>Pfad</b></label>
+                         for="newNLWPfad"><b> {{ 'lecture.path' | translate }} </b></label>
                   <div class="col-12 col-sm-8 col-md-9 col-lg-8 col-xl-8">
                     <input class="form-control" id="newNLWPfad"
                            name="newNLWPfad" disabled>
                   </div>
                   <label class="col-12 col-lg-2 col-xl-2 mt-3 mt-lg-2 offset-sm-4 offset-md-3 offset-lg-0">
-                    <input type="checkbox" id="newNLWDrucker" name="newNLWDrucker" disabled> Drucker</label>
+                    <input type="checkbox" id="newNLWDrucker" name="newNLWDrucker" disabled> {{ 'lecture.printer' | translate }} </label>
                 </div>
                 <div class="form-group row">
                   <label class="control-label col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2"
-                         for="newNLWLaufwerk"><b>Laufwerk</b></label>
+                         for="newNLWLaufwerk"><b> {{ 'lecture.drive' | translate }} </b></label>
                   <div class="col-12 col-sm-8 col-md-9 col-lg-10 col-xl-4">
                     <select class="form-control" id="newNLWLaufwerk"
                             name="newNLWLaufwerk" disabled>
                     </select>
                   </div>
                   <label class="control-label col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 mt-sm-3 mt-xl-0"
-                         for="newNLWAuthentifizierung"><b>Authentifizierung</b></label>
+                         for="newNLWAuthentifizierung"><b> {{ 'lecture.auth' | translate }} </b></label>
                   <div class="col-12 col-sm-8 col-md-9 col-lg-10 col-xl-4 mt-sm-3 mt-xl-0">
                     <select class="form-control" id="newNLWAuthentifizierung"
                             name="newNLWAuthentifizierung" disabled>
@@ -483,13 +473,13 @@
                 </div>
                 <div class="form-group row mt-2">
                   <label class="control-label col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2"
-                         for="newNLWBenutzer"><b>Benutzername</b></label>
+                         for="newNLWBenutzer"><b> {{ 'lecture.username' | translate }} </b></label>
                   <div class="col-12 col-sm-8 col-md-9 col-lg-10 col-xl-4">
                     <input class="form-control" id="newNLWBenutzer"
                            name="newNLWBenutzer" disabled>
                   </div>
                   <label class="control-label col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 mt-sm-3 mt-xl-0"
-                         for="newNLWPasswort"><b>Passwort</b></label>
+                         for="newNLWPasswort"><b> {{ 'lecture.pwd' | translate }} </b></label>
                   <div class="col-12 col-sm-8 col-md-9 col-lg-10 col-xl-4 mt-sm-3 mt-xl-0">
                      <input class="form-control" id="newNLWPasswort"
                            name="newNLWPasswort" disabled>
@@ -497,7 +487,7 @@
                 </div>
                 <div class="form-group row mt-2">
                   <div class="col-12 text-right">
-                    <a class="push"><i class="fa fa-plus"></i><b> Netzlaufwerk hinzufügen</b></a>
+                    <a class="push"><i class="fa fa-plus"></i><b> {{ 'lecture.adddrive' | translate }} </b></a>
                   </div>
                 </div>
               </div>
@@ -506,12 +496,9 @@
           <div class="container tab-pane fade" id="ldap-filter-veranstaltung">
             <div class="form-group row mt-3">
               <div class="col-12">
-                <p class="invalid"><i class="fa fa-exclamation-triangle"></i> Funktionalität noch nicht gegeben</p>
+                <p class="invalid"><i class="fa fa-exclamation-triangle"></i> {{ 'lecture.function' | translate }} </p>
                 <p>
-                  Geben Sie hier LDAP Filter ein, die die Sichtbarkeit der Veranstaltung abhängig vom angemeldeten
-                  Benutzer
-                  einschränken. Eine Veranstaltung ist sichtbar, sobald einer der angegebenen Filter zutrifft.
-                  Zusätzliche Raumbeschränkungen greifen weiterhin.
+                  {{ 'lecture.notice10' | translate }}
                 </p>
               </div>
             </div>
@@ -522,8 +509,8 @@
                   <tr>
                     <th></th>
                     <th>Name</th>
-                    <th>Attribut</th>
-                    <th>Wert</th>
+                    <th> {{ 'lecture.attr' | translate }} </th>
+                    <th> {{ 'lecture.value' | translate }} </th>
                   </tr>
                   </thead>
                   <tbody>
@@ -531,7 +518,7 @@
                 </table>
                 <div class="form-group row mt-5">
                   <div class="col-12">
-                    <b class="description">Eigenen Filter hinzufügen</b>
+                    <b class="description"> {{ 'lecture.ownfilter' | translate }} </b>
                   </div>
                 </div>
                 <div class="form-group row mt-2">
@@ -545,7 +532,7 @@
                 </div>
                 <div class="form-group row mt-2">
                   <label class="control-label col-12 col-sm-2"
-                         for="newFilterAttribut"><b>Attribut</b></label>
+                         for="newFilterAttribut"><b> {{ 'lecture.attr' | translate }} </b></label>
                   <div class="col-12 col-sm-10">
                     <input class="form-control" id="newFilterAttribut" disabled
                            name="newFilterAttribut">
@@ -553,13 +540,13 @@
                 </div>
                 <div class="form-group row">
                   <label class="control-label col-12 col-sm-2"
-                         for="newFilterWert"><b>Wert</b></label>
+                         for="newFilterWert"><b> {{ 'lecture.value' | translate }} </b></label>
                   <div class="col-12 col-sm-10 col-lg-8">
                     <input class="form-control" id="newFilterWert" disabled
                            name="newFilterWert">
                   </div>
                   <div class="col-12 col-lg-2 mt-3 mt-lg-1">
-                    <a class="push"><i class="fa fa-plus"></i><b> Filter hinzufügen</b></a>
+                    <a class="push"><i class="fa fa-plus"></i><b> {{ 'lecture.addfilter' | translate }} </b></a>
                   </div>
                 </div>
 
@@ -573,7 +560,7 @@
                 <button class="text-box" type="submit" [disabled]="!change"
                         [ngClass]="{ 'butdis': !change, 'button': change,
                         'invalid': (submitted && this.editEventForm.invalid) || this.lecture.locationIds.length > 4 || amountOfDays < 1}">
-                  <i class="fa fa-check-circle"></i> Speichern
+                  <i class="fa fa-check-circle"></i> {{ 'lecture.save' | translate }}
                 </button>
               </div>
             </div>
