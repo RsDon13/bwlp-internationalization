@@ -1,7 +1,13 @@
 {
     "changes-dialog.discard": "Änderungen verwerfen",
     "changes-dialog.question": "Möchten Sie die vorgenommenen Änderungen wirklich verwerfen?",
-    
+
+    "changeowner.owner": "Besitzer ändern",
+    "changeowner.choose": "Wählen Sie einen Benutzer aus, dem Sie die Besitzrechte übertragen wollen:",
+    "changeowner.search": "Suche",
+    "changeowner.cancel": "Abbrechen",
+    "changeowner.setowner": "Besitzer festlegen",
+
     "login.login": "Zugangsdaten",
     "login.username": "Benutzername",
     "login.pwd": "Passwort",

@@ -2,6 +2,12 @@
     "changes-dialog.discard": "Discard changes",
     "changes-dialog.question": "Do you really want to discard the changes you made?",
 
+    "changeowner.owner": "Change owner",
+    "changeowner.choose": "Select a user to whom you want to transfer ownership:",
+    "changeowner.search": "Search",
+    "changeowner.cancel": "Cancel",
+    "changeowner.setowner": "Set owner",
+
     "login.login": "Login",
     "login.username": "Username",
     "login.pwd": "Password",
