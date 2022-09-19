@@ -56,6 +56,13 @@
     "navigation.about": "About",
     "navigation.agreement": "User agreement",
     "navigation.data": "Privacy policy",
-    "navigation.logout": "Logout"
+    "navigation.logout": "Logout",
+
+    "useragreement.agreement": "User agreement",
+    "useragreement.notice1": "The use of this program is only permitted in coordination with the respective participating university institution and is subject to its regulations and restrictions. Virtual machines created and provided within the framework of the bwLehrpool system that contain software that is not freely licensed may only be used and distributed with the permission or licensing of the relevant rights holders.",
+    "useragreement.notice2": "In particular, it is expressly pointed out that the responsibility with regard to any necessary licensing of all software within a Virtual Machine, regular updating and timely importing of security updates lies exclusively with the creating personnel.",
+    "useragreement.licence": "Program licensing",
+    "useragreement.notice4": "No warranty of any kind, express or implied, is made with respect to this program to the fullest extent permitted by law. The copyright holder provides the program as is. The full risk as to quality, performance or any general, special, incidental or consequential damages arising out of the use or inability to use the program (including loss of data or misprocessing of data) rests with the user."
+
 
 }
