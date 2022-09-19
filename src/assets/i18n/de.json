@@ -262,7 +262,12 @@
     "vm.list": "Hier können Sie die Rechte für nicht in der Liste angegebene Nutzer festlegen",
     "vm.upload": "Neue Version hochladen",
     "vm.save": "Speichern",
-    "vm.by": "durch"
+    "vm.by": "durch",
+
+    "vmsdialog.delete": "Virtuelle Maschinen löschen",
+    "vmsdialog.question": "Möchten Sie die folgenden virtuellen Maschinen inklusive ihrer Versionen wirklich löschen?",
+    "vmsdialog.yes": "Ja",
+    "vmsdialog.no": "Nein"
 
 
 }

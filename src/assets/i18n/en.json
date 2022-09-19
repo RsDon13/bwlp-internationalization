@@ -262,7 +262,12 @@
     "vm.list": "Here you can set the rights for users not specified in the list",
     "vm.upload": "Upload new version",
     "vm.save": "Save",
-    "vm.by": "by"
+    "vm.by": "by",
+
+    "vmsdialog.delete": "Delete virtual machines",
+    "vmsdialog.question": "Do you really want to delete the following virtual machines including their versions?",
+    "vmsdialog.yes": "Yes",
+    "vmsdialog.no": "No"
 
 
 
