@@ -44,6 +44,11 @@
     "login.DFN": "Authentifizierung über DFN-AAI",
     "login.test": "Test-Zugang mit festem Benutzer",
     "login.sat": "Direkter Zugang zum Satelliten",
-    "login.register": "Registrieren"
+    "login.register": "Registrieren",
+
+    "logindialog.setSat": "Satellitenserver auswählen",
+    "logindialog.givenSat": "Vorgegebene Server",
+    "logindialog.serveradress": "Server-Adresse selbst eingeben",
+    "logindialog.next": "Weiter"
 
 }

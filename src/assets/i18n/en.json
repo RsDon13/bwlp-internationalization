@@ -44,6 +44,11 @@
     "login.DFN": "Authentification via DFN-AAI",
     "login.test": "Test-access",
     "login.sat": "Direct connection to Satelliteserver",
-    "login.register": "Register"
+    "login.register": "Register",
+
+    "logindialog.setSat": "Select satellite server",
+    "logindialog.givenSat": "Preset server",
+    "logindialog.serveradress": "Enter server address by yourself",
+    "logindialog.next": "Next"
 
 }
