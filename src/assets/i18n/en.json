@@ -49,6 +49,13 @@
     "logindialog.setSat": "Select satellite server",
     "logindialog.givenSat": "Preset server",
     "logindialog.serveradress": "Enter server address by yourself",
-    "logindialog.next": "Next"
+    "logindialog.next": "Next",
+
+    "navigation.vm": "VMs",
+    "navigation.lecture": "Lectures",
+    "navigation.about": "About",
+    "navigation.agreement": "User agreement",
+    "navigation.data": "Privacy policy",
+    "navigation.logout": "Logout"
 
 }

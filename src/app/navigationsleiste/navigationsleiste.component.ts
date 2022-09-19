@@ -1,6 +1,7 @@
 import { LoginService } from './../login.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -13,6 +14,7 @@ export class NavigationsleisteComponent implements OnInit {
 
 
   constructor(
+    private translate: TranslateService,
     private router: Router,
     private log: LoginService
     ) { }

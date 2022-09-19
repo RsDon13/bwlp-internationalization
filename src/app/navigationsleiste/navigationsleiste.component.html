@@ -12,26 +12,31 @@
       <ul class="navbar-nav">
         <li class="navbar-item">
           <a class="nav-link myNav" routerLink="/vms" routerLinkActive="highlightItem" id="navbardrop">
-            VMs
+            {{ 'navigation.vm' | translate }}
           </a>
         </li>
         <li class="navbar-item">
           <a class="nav-link myNav" routerLink="/veranstaltungen" routerLinkActive="highlightItem" id="navbardrop">
-            Veranstaltungen
+            {{ 'navigation.lecture' | translate }}
           </a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        <li class="navbar-item">
+          Change Language : <select #selLang (change)="translate.use(selLang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+          </select>
+        </li>
         <li class="navbar-item dropdown">
           <a class="nav-link dropdown-toggle myNav cursorPointer" id="ueberdrop" data-toggle="dropdown">
-            Über
+            {{ 'navigation.about' | translate }}
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item myDrop" routerLink="/nutzungsvereinbarung" routerLinkActive="highlightItem">
-              Nutzungsvereinbarung
+              {{ 'navigation.agreement' | translate }}
             </a>
             <a class="dropdown-item myDrop" routerLink="/datenschutzerklaerung" routerLinkActive="highlightItem">
-              Datenschutzerklärung
+              {{ 'navigation.data' | translate }}
             </a>
             <a class="dropdown-item myDrop"
                href="https://elearning.hochschule-rhein-waal.de/dokuwiki/doku.php?id=hsrw:services:lehrpool.nrw:lehrpool.nrw"
@@ -44,7 +49,7 @@
         <li class="navbar-item">
           <a class="nav-link myNav" routerLink="" (click)="logout()">
             <i class="fa fa-sign-out"></i>
-            Abmelden
+            {{ 'navigation.logout' | translate }}
           </a>
         </li>
       </ul>
