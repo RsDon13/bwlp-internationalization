@@ -226,7 +226,12 @@
     "lectures.start": "Geändert",
     "lectures.expiration": "Ablaufdatum",
     "lectures.enable": "Aktiviert",
-    "lectures.valid": "Veranstaltung gültig"
+    "lectures.valid": "Veranstaltung gültig",
+
+    "lecturesdialog.delete": "Veranstaltungen löschen",
+    "lecturesdialog.question": "Möchten Sie die folgenden Veranstaltungen wirklich löschen?",
+    "lecturedialog.yes": "Ja",
+    "lecturesdialog.no": "Nein"
 
 
 }

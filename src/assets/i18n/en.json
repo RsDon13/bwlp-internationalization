@@ -226,7 +226,12 @@
     "lectures.start": "Start",
     "lectures.expiration": "Expiration",
     "lectures.enable": "Enabled",
-    "lectures.valid": "Lecture valid"
+    "lectures.valid": "Lecture valid",
+
+    "lecturesdialog.delete": "Delete lectures",
+    "lecturesdialog.question": "Do you really want to delete the following lectures?",
+    "lecturedialog.yes": "Yes",
+    "lecturesdialog.no": "No"
 
 
 
